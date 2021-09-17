@@ -1,0 +1,561 @@
+{% extends 'admin/base.html' %}
+{% block title %} Dashboard {% endblock title %}
+{% block mainbody %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">
+                        {% if current_user.is_authenticated %}
+                        WELCOME <strong>{{username.upper()}}</strong>
+                        {% endif %}
+                    </h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>$15000</h3>
+
+                            <p>Total Donation</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-cash"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>53</h3>
+
+                            <p>Total Campaign</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>44</h3>
+
+                            <p>Total Contact</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>65</h3>
+                            <p>Total Landing Page</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-document"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+            <!-- Main row -->
+            <div class="row">
+                <!-- Left col -->
+                <section class="col-lg-7 connectedSortable">
+                    <!-- Donation widget -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="ion ion-cash mr-1"></i>
+                                Donation
+                            </h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="filter">
+                                <div class="card card-info card-outline">
+                                    <div class="card-header">
+                                        <h5 class="card-title"> <i class="fas fa-filter"></i>Filter Donation</h5>
+                                        <div class="card-tools">
+                                            <div class="custom-control custom-checkbox">
+                                                <div class="fc-toolbar-chunk">
+                                                    <div class="btn-group">
+                                                        <button class="fc-dayGridMonth-button btn btn-primary"
+                                                            type="button">Recent</button>
+                                                        <button class="fc-dayGridMonth-button btn btn-primary"
+                                                            type="button">Week</button>
+                                                        <button class="fc-dayGridMonth-button btn btn-primary"
+                                                            type="button">Month</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="bg-info p-2">Recent Donation - 3</p>
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 10px">#</th>
+                                                    <th>Donor</th>
+                                                    <th>Payment Method</th>
+                                                    <th style="width: 40px">Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1.</td>
+                                                    <td>Jhon Walk</td>
+                                                    <td>Paypal</td>
+                                                    <td>$100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2.</td>
+                                                    <td>Peter Parker</td>
+                                                    <td>Stripe</td>
+                                                    <td>$300</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3.</td>
+                                                    <td>Harry porter</td>
+                                                    <td>Paypal</td>
+                                                    <td>$1000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4.</td>
+                                                    <td>Elena Emi</td>
+                                                    <td>Paypal</td>
+                                                    <td>$800</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix text-center">
+                            <button type="button" class="btn btn-outline-info"><i class="fas fa-eye"></i> View
+                                All</button>
+                        </div>
+                    </div>
+                    <!-- /.Donation widget -->
+                    <!-- Form widget -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="ion ion-cash mr-1"></i>
+                                Forms
+                            </h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="filter">
+                                <div class="card card-info card-outline">
+                                    <div class="card-header">
+                                        <h5 class="card-title"> <i class="fas fa-filter"></i>Filter Forms</h5>
+                                        <div class="card-tools">
+                                            <div class="custom-control custom-checkbox">
+                                                <div class="fc-toolbar-chunk">
+                                                    <div class="btn-group">
+                                                        <button class="fc-dayGridMonth-button btn btn-primary"
+                                                            type="button">Recent</button>
+                                                        <button class="fc-dayGridMonth-button btn btn-primary"
+                                                            type="button">Week</button>
+                                                        <button class="fc-dayGridMonth-button btn btn-primary"
+                                                            type="button">Month</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 10px">#</th>
+                                                    <th>Form Name</th>
+                                                    <th>Form Response</th>
+                                                    <th style="width: 40px">Performance</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1.</td>
+                                                    <td>Contact Us</td>
+                                                    <td>100</td>
+                                                    <td class="badge bg-success">Excellent</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2.</td>
+                                                    <td>Feedback Form</td>
+                                                    <td>80</td>
+                                                    <td class="badge bg-info">Good</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3.</td>
+                                                    <td>Donation Form</td>
+                                                    <td>10</td>
+                                                    <td class="badge bg-danger">Bad</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4.</td>
+                                                    <td>Register</td>
+                                                    <td>20</td>
+                                                    <td class="badge bg-warning">Fair</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix text-center">
+                            <button type="button" class="btn btn-outline-info"><i class="fas fa-eye"></i> View
+                                All</button>
+                        </div>
+                    </div>
+                    <!-- /.Form widget -->
+                    <!-- Mail Blasts widget -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-envelope mr-1"></i>
+                                Mail Blast
+                            </h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="filter">
+                                <div class="card card-info card-outline">
+                                    <div class="card-header">
+                                        <h5 class="card-title"> <i class="fas fa-filter"></i>Filter Donar</h5>
+                                        <div class="card-tools">
+                                            <div class="custom-control custom-checkbox">
+                                                <div class="fc-toolbar-chunk">
+                                                    <div class="btn-group">
+                                                        <button class="fc-dayGridMonth-button btn btn-primary"
+                                                            type="button" id="maildonar">Month</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 10px">#</th>
+                                                    <th>Donar Name</th>
+                                                    <th>Email</th>
+                                                    <th style="width: 40px">Contact</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1.</td>
+                                                    <td>Jhone Doe</td>
+                                                    <td>jhon@mailinator.com</td>
+                                                    <td>9320234422</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2.</td>
+                                                    <td>Sam Todha</td>
+                                                    <td>sam@mailinator.com</td>
+                                                    <td>9432243422</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3.</td>
+                                                    <td>Nile Banner</td>
+                                                    <td>nile@mailinator.com</td>
+                                                    <td>9323234422</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4.</td>
+                                                    <td>Hank Doman</td>
+                                                    <td>haank@mailinator.com</td>
+                                                    <td>3220234422</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix text-center">
+                            <button type="button" class="btn btn-outline-info"><i class="fas fa-paper-plane"></i> Send
+                                Mail</button>
+                        </div>
+                    </div>
+                    <!-- /.Mail Blasts widget -->
+                </section>
+                <!-- /.Left col -->
+                <!-- right col (We are only adding the ID to make the widgets sortable)-->
+                <section class="col-lg-5 connectedSortable">
+                    <!-- Campaign overview widget -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-chart-pie mr-1"></i>
+                                Campaign Overview
+                            </h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="filter">
+                                <div class="card card-info card-outline">
+                                    <div class="card-header">
+                                        <h5 class="card-title"> <i class="fas fa-filter"></i>Filter Campaing</h5>
+                                        <div class="card-tools">
+                                            <div class="custom-control custom-checkbox">
+                                                <div class="fc-toolbar-chunk">
+                                                    <div class="btn-group">
+                                                        <button class="fc-dayGridMonth-button btn btn-primary"
+                                                            type="button">Recent</button>
+                                                        <button class="fc-dayGridMonth-button btn btn-primary"
+                                                            type="button">Week</button>
+                                                        <button class="fc-dayGridMonth-button btn btn-primary"
+                                                            type="button">Month</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="info-box mb-3 bg-warning">
+                                            <span class="info-box-icon"><i class="fas fa-chart-pie"></i></span>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">Total Running Campaign</span>
+                                                <span class="info-box-number">10</span>
+                                            </div>
+                                            <!-- /.info-box-content -->
+                                        </div>
+                                        <div class="info-box mb-3 bg-success">
+                                            <span class="info-box-icon"><i class="far fa-edit"></i></span>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">Total Forms</span>
+                                                <span class="info-box-number">20</span>
+                                            </div>
+                                            <!-- /.info-box-content -->
+                                        </div>
+                                        <div class="info-box mb-3 bg-danger">
+                                            <span class="info-box-icon"><i class="fas fa-book"></i></span>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">Total Landing Page</span>
+                                                <span class="info-box-number">10</span>
+                                            </div>
+                                            <!-- /.info-box-content -->
+                                        </div>
+                                        <div class="info-box mb-3 bg-info">
+                                            <span class="info-box-icon"><i class="far fa-user"></i></span>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">Total Donor</span>
+                                                <span class="info-box-number">3000</span>
+                                            </div>
+                                            <!-- /.info-box-content -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix text-center">
+                            <button type="button" class="btn btn-outline-info"><i class="fas fa-eye"></i> View
+                                All</button>
+                        </div>
+                    </div>
+                    <!-- /.Campaign widget -->
+                    <!-- Contact widget -->
+                    <div class="card">
+
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fas fa-user"></i> Recently Added Contact</h3>
+                            <br>
+                            <hr>
+                            <h5 class="card-title"> <i class="fas fa-filter"></i>Filter Contact</h5>
+
+                            <div class="card-tools">
+                                <div class="custom-control custom-checkbox">
+                                    <div class="fc-toolbar-chunk">
+                                        <div class="btn-group">
+                                            <button class="fc-dayGridMonth-button btn btn-primary active"
+                                                type="button">Recent</button>
+                                            <button class="fc-dayGridMonth-button btn btn-primary"
+                                                type="button">Week</button>
+                                            <button class="fc-dayGridMonth-button btn btn-primary"
+                                                type="button">Month</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body p-0">
+                            <ul class="products-list product-list-in-card pl-2 pr-2">
+                                <li class="item">
+                                    <div class="product-img">
+                                        <img src="{{ url_for('static', filename='dist/img/default-150x150.png') }}"
+                                            alt="Product Image" class="img-size-50">
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="javascript:void(0)" class="product-title">Jhon Doe
+                                            <span class="product-description">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry
+                                            </span>
+                                    </div>
+                                </li>
+                                <!-- /.item -->
+                                <li class="item">
+                                    <div class="product-img">
+                                        <img src="{{ url_for('static', filename='dist/img/default-150x150.png') }}"
+                                            alt="Product Image" class="img-size-50">
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="javascript:void(0)" class="product-title">Lissa Walker
+                                            <span class="product-description">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry
+                                            </span>
+                                    </div>
+                                </li>
+                                <!-- /.item -->
+                                <li class="item">
+                                    <div class="product-img">
+                                        <img src="{{ url_for('static', filename='dist/img/default-150x150.png') }} "
+                                            alt="Product Image" class="img-size-50">
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="javascript:void(0)" class="product-title">Rihana Elite
+                                            <span class="product-description">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry
+                                            </span>
+                                    </div>
+                                </li>
+                                <!-- /.item -->
+                                <li class="item">
+                                    <div class="product-img">
+                                        <img src="{{ url_for('static', filename='dist/img/default-150x150.png') }}"
+                                            alt="Product Image" class="img-size-50">
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="javascript:void(0)" class="product-title">Robert Dawn
+                                            <span class="product-description">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry
+                                            </span>
+                                    </div>
+                                </li>
+                                <!-- /.item -->
+                            </ul>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer text-center">
+                            <a href="javascript:void(0)" class="uppercase">View All Contacts</a>
+                        </div>
+                        <!-- /.card-footer -->
+                    </div>
+                    <!-- /.Contact widget-->
+                    <!-- Calendar -->
+                    <div class="card bg-gradient-success">
+                        <div class="card-header border-0">
+
+                            <h3 class="card-title">
+                                <i class="far fa-calendar-alt"></i>
+                                Calendar
+                            </h3>
+                            <!-- tools card -->
+                            <div class="card-tools">
+                                <!-- button with a dropdown -->
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success btn-sm dropdown-toggle"
+                                        data-toggle="dropdown" data-offset="-52">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                    <div class="dropdown-menu" role="menu">
+                                        <a href="#" class="dropdown-item">Add new event</a>
+                                        <a href="#" class="dropdown-item">Clear events</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">View calendar</a>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-success btn-sm" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-success btn-sm" data-card-widget="remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <!-- /. tools -->
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body pt-0">
+                            <!--The calendar -->
+                            <div id="calendar" style="width: 100%"></div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </section>
+                <!-- right col -->
+            </div>
+            <!-- /.row (main row) -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{% endblock mainbody %}
+
+{% block addScript %}
+<script>
+    $('#maildonar').daterangepicker({
+        timePicker: true,
+        timePickerIncrement: 30,
+        locale: {
+            format: 'MM/DD/YYYY hh:mm A'
+        }
+    })
+</script>
+{% endblock addScript %}
